@@ -63,6 +63,7 @@
     <orderEntry type="library" scope="PROVIDED" name="irb (v1.6.4, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="json (v2.6.3, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="jsonapi-renderer (v0.2.2, RVM: ruby-3.0.0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="lockbox (v1.3.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="loofah (v2.20.0, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="mail (v2.8.1, RVM: ruby-3.0.0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="marcel (v1.0.2, RVM: ruby-3.0.0) [gem]" level="application" />
@@ -136,6 +137,7 @@
         <option value="generator" />
         <option value="integration_test" />
         <option value="job" />
+        <option value="lockbox:audits" />
         <option value="mailbox" />
         <option value="mailer" />
         <option value="migration" />
@@ -185,6 +187,7 @@
         <option value="generator" />
         <option value="integration_test" />
         <option value="job" />
+        <option value="lockbox:audits" />
         <option value="mailbox" />
         <option value="mailer" />
         <option value="migration" />

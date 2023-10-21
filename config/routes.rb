@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end
     post 'verify', to: 'organizations#verify'
 
-    resources :categories, only: :index
+    resources :categories
     resources :reports do
       get 'search', on: :member
       scope module: 'reports' do
