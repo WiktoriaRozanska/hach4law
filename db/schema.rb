@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_21_191628) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_21_231808) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -90,11 +90,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_21_191628) do
     t.string "person_involved_ciphertext"
     t.string "full_name_ciphertext"
     t.string "localization_ciphertext"
-    t.string "frequency_ciphertext"
-    t.string "source_of_true_ciphertext"
+    t.string "source_of_truth_ciphertext"
     t.boolean "already_reported"
     t.string "additional_information_ciphertext"
-    t.string "person_reported_ciphertext"
     t.string "status"
     t.uuid "organization_id"
     t.datetime "created_at", null: false
