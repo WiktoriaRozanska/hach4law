@@ -10,4 +10,6 @@ class User < ApplicationRecord
   before_save -> { skip_confirmation! }
 
   belongs_to :organization
+
+  enum :role, { super_admin: 'super_admin', admin: 'admin', guest: 'guest' }.freeze
 end
