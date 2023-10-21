@@ -13,10 +13,10 @@ Rails.application.routes.draw do
 
     resources :categories
     resources :reports do
-      get 'search', on: :member
       scope module: 'reports' do
         resources :comments, on: :member
       end
     end
+    get 'search_report', to: 'reports#search'
   end
 end
