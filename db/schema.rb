@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_21_153703) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_21_171226) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -41,6 +41,29 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_21_153703) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "reports", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "slug", default: "", null: false
+    t.uuid "category_id"
+    t.datetime "occurrence"
+    t.string "description"
+    t.string "relation_with_the_company"
+    t.string "person_involved"
+    t.string "full_name"
+    t.string "localization"
+    t.string "frequency"
+    t.string "source_of_true"
+    t.boolean "already_reported"
+    t.string "additional_information"
+    t.string "person_reported"
+    t.string "status"
+    t.uuid "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_reports_on_category_id"
+    t.index ["organization_id"], name: "index_reports_on_organization_id"
+    t.index ["slug"], name: "index_reports_on_slug", unique: true
   end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
