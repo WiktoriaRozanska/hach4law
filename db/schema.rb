@@ -10,10 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_21_101444) do
+ActiveRecord::Schema[7.0].define(version: 2023_10_21_133647) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
+
+  create_table "employees", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "email"
+    t.bigint "organization_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["organization_id"], name: "index_employees_on_organization_id"
+  end
+
+  create_table "organizations", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.boolean "notify_by_email", default: false, null: false
+    t.string "key"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "provider", default: "email", null: false
@@ -34,8 +51,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_21_101444) do
     t.json "tokens"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.uuid "organization_id"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["organization_id"], name: "index_users_on_organization_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end

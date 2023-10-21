@@ -8,4 +8,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   before_save -> { skip_confirmation! }
+
+  belongs_to :organization
 end
