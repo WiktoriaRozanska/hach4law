@@ -57,4 +57,5 @@ group :development do
 
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
   gem 'rubocop', require: false
+  gem 'pry-byebug'
 end
