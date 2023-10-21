@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   namespace :v1 do
     get 'organization', to: 'organizations#index'
+    scope module: 'organizations' do
+      resources :employees, on: :member, only: :create
+    end
     post 'verify', to: 'organizations#verify'
 
     resources :categories, only: :index
