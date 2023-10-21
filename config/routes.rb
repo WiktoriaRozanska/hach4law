@@ -7,5 +7,7 @@ Rails.application.routes.draw do
   namespace :v1 do
     get 'organization', to: 'organizations#index'
     post 'verify', to: 'organizations#verify'
+
+    resources :categories, only: :index
   end
 end
