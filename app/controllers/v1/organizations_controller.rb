@@ -1,36 +1,40 @@
 # frozen_string_literal: true
 
-class V1::OrganizationsController< ApplicationController
-  def index
-    render_json(Organization.first)
-  end
+module V1
+  class OrganizationsController < ApplicationController
+    before_action :authenticate_user!, except: [:verify]
 
-  def verify
-    organization
-    access_token_to_response!
-  end
+    def index
+      render_json(current_organization)
+    end
 
-  private
+    def verify
+      organization
+      access_token_to_response!
+    end
 
-  def verify_params
-    params.permit(:key, :slug)
-  end
+    private
 
-  def organization
-    @organization = Organization.find_by!(key: verify_params[:key], slug: verify_params[:slug])
-  end
+    def verify_params
+      params.permit(:key, :slug)
+    end
 
-  def access_token_to_response!
-    response.headers.merge!(guest.create_new_auth_token)
-  end
+    def organization
+      @organization = Organization.find_by!(key: verify_params[:key], slug: verify_params[:slug])
+    end
 
-  def guest
-    User.new.tap do |user|
-      user.role = :guest
-      user.skip_confirmation!
-      user.email = "#{Time.current.to_i}_#{SecureRandom.hex(10)}@guest.true"
-      user.organization = organization
-      user.save(validate: false)
+    def access_token_to_response!
+      response.headers.merge!(guest.create_new_auth_token)
+    end
+
+    def guest
+      User.new.tap do |user|
+        user.role = :guest
+        user.skip_confirmation!
+        user.email = "#{Time.current.to_i}_#{SecureRandom.hex(10)}@guest.true"
+        user.organization = organization
+        user.save(validate: false)
+      end
     end
   end
 end

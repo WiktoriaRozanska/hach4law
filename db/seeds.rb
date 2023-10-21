@@ -17,11 +17,13 @@ admin = User.create!(email: 'pan.janusz@korpo.com', first_name: 'Janusz', last_n
   Employee.create!(email: "prawonik_#{i}@korpo.com", organization: organization)
 end
 
-main_categories = ['KAT-1', 'KAT-2', 'KAT-3']
-sub_categories = ['podkategoria 1', 'podkategoria 2', 'podkategoria 3', 'podkategoria 4', 'podkategoria 5', 'podkategoria 6']
+main_categories = %w[KAT-1 KAT-2 KAT-3]
+sub_categories = ['podkategoria 1', 'podkategoria 2', 'podkategoria 3', 'podkategoria 4', 'podkategoria 5',
+                  'podkategoria 6']
 main_categories.each do |cat|
   main_cat = Category.create!(organization: organization, title: cat, description: '')
   sub_categories.each do |sub_cat_title|
-    Category.create!(title: sub_cat_title, parent_category_id: main_cat.id, organization: organization, description: 'Example description for')
+    Category.create!(title: sub_cat_title, parent_category_id: main_cat.id, organization: organization,
+                     description: 'Example description for')
   end
 end

@@ -44,7 +44,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem "rack-cors"
+gem 'rack-cors'
 
 # ActiveModel::Serializers allows you to generate your JSON in an object-oriented and convention-driven manner.
 gem 'active_model_serializers', '~> 0.10.0'
@@ -59,6 +59,6 @@ group :development do
   # gem "spring"
 
   # RuboCop is a Ruby static code analyzer (a.k.a. linter) and code formatter.
-  gem 'rubocop', require: false
   gem 'pry-byebug'
+  gem 'rubocop', require: false
 end

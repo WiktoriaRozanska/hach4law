@@ -19,8 +19,6 @@ class CreateReports < ActiveRecord::Migration[7.0]
       t.string :status
       t.belongs_to :organization, type: :uuid
 
-
-
       t.timestamps
     end
 

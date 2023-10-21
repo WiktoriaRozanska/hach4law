@@ -9,5 +9,8 @@ Rails.application.routes.draw do
     post 'verify', to: 'organizations#verify'
 
     resources :categories, only: :index
+    resources :reports do
+      get 'search', on: :member
+    end
   end
 end

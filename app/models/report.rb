@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class Report < ApplicationRecord
-  validates :slug, presence: true
+  # validates :slug, presence: true
 
   belongs_to :organization
   belongs_to :category
+
+  has_many_attached :files, dependent: :purge_later
 
   before_create :generate_slug
 
