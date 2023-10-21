@@ -11,6 +11,9 @@ Rails.application.routes.draw do
     resources :categories, only: :index
     resources :reports do
       get 'search', on: :member
+      scope module: 'reports' do
+        resources :comments, on: :member
+      end
     end
   end
 end
