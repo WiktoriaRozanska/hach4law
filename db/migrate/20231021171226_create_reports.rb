@@ -5,17 +5,17 @@ class CreateReports < ActiveRecord::Migration[7.0]
     create_table :reports, id: :uuid do |t|
       t.string :slug, null: false, default: ''
       t.belongs_to :category, type: :uuid
-      t.datetime :occurrence
-      t.string :description
-      t.string :relation_with_the_company
-      t.string :person_involved
-      t.string :full_name
-      t.string :localization
-      t.string :frequency
-      t.string :source_of_true
+      t.datetime :occurrence_ciphertext
+      t.string :description_ciphertext
+      t.string :relation_with_the_company_ciphertext
+      t.string :person_involved_ciphertext
+      t.string :full_name_ciphertext
+      t.string :localization_ciphertext
+      t.string :frequency_ciphertext
+      t.string :source_of_true_ciphertext
       t.boolean :already_reported
-      t.string :additional_information
-      t.string :person_reported
+      t.string :additional_information_ciphertext
+      t.string :person_reported_ciphertext
       t.string :status
       t.belongs_to :organization, type: :uuid
 

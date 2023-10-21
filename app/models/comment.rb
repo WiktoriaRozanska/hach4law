@@ -6,5 +6,7 @@ class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :report
 
+  has_encrypted :body
+
   default_scope { order(:created_at) }
 end
