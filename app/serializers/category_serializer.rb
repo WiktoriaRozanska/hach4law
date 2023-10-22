@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class CategorySerializer < ActiveModel::Serializer
-  attributes :id, :title, :description, :subcategories
+  attributes :id, :title, :description, :icon, :subcategories
+
+  def title
+    object.title.capitalize
+  end
 
   def subcategories
     # Category.where

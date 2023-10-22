@@ -2,7 +2,7 @@
 
 module BasicCategories
   LIST = [
-    { category: 'ZAMÓWIENIA PUBLICZNE', subcategories: [
+    { category: 'ZAMÓWIENIA PUBLICZNE', icon: :public, subcategories: [
       { category: 'Korupcja i inne nieuczciwe praktyki w procesie przetargowym',
         description: 'Przykłady zgłoszeń: przestrzegania klauzul antykorupcyjnych | manipulacje w ogłaszaniu przetargów | nieuczciwa konkurencja | nielegalne zachowania związane z przetargami | nieuczciwa ocena ofert | przyznanie kontraktu firmie niespełniającej wymagań' },
       { category: 'Fałszowanie dokumentów',
@@ -12,7 +12,7 @@ module BasicCategories
       { category: 'Naruszenia postanowień umów i przekształcenia kontraktów',
         description: 'Przykłady zgłoszeń: nieprzestrzeganie postanowień umów i warunków dostaw | nielegalne przekształcenie kontraktów lub zmiana ich treści' }
     ] },
-    { category: 'NADUŻYCIA FINANSOWE I PRANIE PIENIĘDZY', subcategories: [
+    { category: 'NADUŻYCIA FINANSOWE I PRANIE PIENIĘDZY', icon: :finances, subcategories: [
       { category: 'Pranie brudnych pieniędzy',
         description: 'Przykłady zgłoszeń: przechodzenie dużych kwot przez wiele rachunków bankowych w celu ukrycia pochodzenia środków | używanie kont bankowych w tzw. rajach podatkowych | zaniżanie wartości transakcji, aby uniknąć obowiązków raportowania' },
       { category: 'Naruszenia przepisów dotyczących handlu papierami wartościowymi',
@@ -26,7 +26,7 @@ module BasicCategories
       { category: 'Naruszenia przepisów dotyczących transakcji międzynarodowych',
         description: 'Przykłady zgłoszeń: Firma uchyla się od przepisów międzynarodowych dotyczących sankcji gospodarczych, prowadząc nielegalne transakcje międzynarodowe' }
     ] },
-    { category: 'BEZPIECZEŃSTWO TRANSPORTU', subcategories: [
+    { category: 'BEZPIECZEŃSTWO TRANSPORTU', icon: :transport, subcategories: [
       { category: 'Naruszenia związane z pojazdami',
         description: 'Przykłady zgłoszeń: wprowadzanie na rynek pojazdów z ukrytymi wadami technicznymi | nieaktualne badania techniczne pojazdu | brak przeglądów technicznych' },
       { category: 'Naruszenia bezpieczeństwa drogowego',
@@ -35,7 +35,7 @@ module BasicCategories
         description: 'Przykłady naruszeń: przewóz nielegalnych produktów | nieprzestrzeganie wymogów sanitarnych' },
       { category: 'Naruszenia związane z transportem morskim lub lotniczym', description: '' }
     ] },
-    { category: 'OCHRONA ŚRODOWISKA', subcategories: [
+    { category: 'OCHRONA ŚRODOWISKA', icon: :environment, subcategories: [
       { category: 'Przestępstwa przeciwko ochronie środowiska',
         description: 'Przykłady naruszeń: nielegalna wycinka lasów | kradzież surowców naturalnych chronionych prawem | zniszczenia ekosystemu' },
       { category: 'Naruszenia przepisów dotyczących środowiska naturalnego i klimatu',
@@ -51,7 +51,7 @@ module BasicCategories
       { category: 'Naruszenia przepisów dotyczących produktów ekologicznych',
         description: 'Przykłady naruszeń: Oferowanie produktów oznaczonych jako "ekologiczne" lub "organiczne", które nie spełniają określonych standardów i wymagań, wprowadzając konsumentów w błąd' }
     ] },
-    { category: 'BEZPIECZEŃSTWO JĄDROWE', subcategories: [
+    { category: 'BEZPIECZEŃSTWO JĄDROWE', icon: :nuclear, subcategories: [
       { category: 'Naruszenia przepisów dotyczących ram bezpieczeństwa jądrowego',
         description: 'Przykłady naruszeń: brak regularnych testów i kontroli stanu technicznego' },
       { category: 'Naruszenia wymogów bezpieczeństwa związanych z użyciem substancji promieniotwórczych',
@@ -59,7 +59,7 @@ module BasicCategories
       { category: 'Naruszenia w nadzorze i kontroli gospodarowania odpadami promieniotwórczymi',
         description: 'Przykłady naruszeń: składowisko odpadów promieniotwórczych nie jest regularnie monitorowane pod kątem wycieków' }
     ] },
-    { category: 'BEZPIECZEŃSTWO ŻYWNOŚCI I ZWIERZĄT', subcategories: [
+    { category: 'BEZPIECZEŃSTWO ŻYWNOŚCI I ZWIERZĄT', icon: :food, subcategories: [
       { category: 'Naruszenia w produkcji żywności',
         description: 'Przykłady naruszeń: dodawanie substancji nieautoryzowanych do produktów spożywczych | brak lub nieprzestrzeganie odpowiednich standardów higieny podczas produkcji, transportu lub przechowywania żywności | przekraczanie dopuszczalnych poziomów substancji toksycznych' },
       { category: 'Naruszenia w sprzedaży żywności',
@@ -67,7 +67,7 @@ module BasicCategories
       { category: 'Naruszenia praw zwierząt',
         description: 'Przykłady naruszeń: niehumanitarne traktowanie | naruszenia w zakresie handlu zwierzętami' }
     ] },
-    { category: 'ZDROWIE PUBLICZNE', subcategories: [
+    { category: 'ZDROWIE PUBLICZNE', icon: :health, subcategories: [
       {
         category: 'Naruszenia przepisów dotyczących pobierania i przetwarzania materiału biologicznego pochodzenia ludzkiego', description: 'Przykłady naruszeń: niewłaściwe przechowywanie materiału biologicznego (krew, komórki, tkanki, narządy) | niespełnianie standardów pobierania'
       },
@@ -78,7 +78,7 @@ module BasicCategories
       { category: 'Naruszenia praw pacjentów',
         description: 'Przykłady naruszeń: niezapewnienie dostępu do opieki zdrowotnej | nieuzasadniona odmowa świadczeń' }
     ] },
-    { category: 'OCHRONA KONSUMENTÓW I BEZPIECZEŃSTWO PRODUKTÓW', subcategories: [
+    { category: 'OCHRONA KONSUMENTÓW I BEZPIECZEŃSTWO PRODUKTÓW', icon: :consumer, subcategories: [
       { category: 'Naruszenia praw konsumentów',
         description: 'Przykłady naruszeń: nieuczciwe praktyki handlowe, sprzedaż wadliwego sprzętu | niespełnienie obowiązków związanych z gwarancją' },
       { category: 'Naruszenia w usługach cyfrowych i świadczonych na odległość',
@@ -93,7 +93,7 @@ module BasicCategories
         category: 'Naruszenia przepisów dotyczących wprowadzania do obrotu oraz stosowania produktów wrażliwych i niebezpiecznyc', description: 'Przykłady naruszeń: wprowadzenie na rynek produktów medycznych bez wymaganych certyfikatów'
       }
     ] },
-    { category: 'OCHRONA PRYWATNOŚCI I DANYCH', subcategories: [
+    { category: 'OCHRONA PRYWATNOŚCI I DANYCH', icon: :privacy, subcategories: [
       { category: 'Nieprawidłowe przetwarzanie danych',
         description: 'Przykłady naruszeń: brak wymaganych zgód na zbieranie i przetwarzanie danych | przetwarzania danych mimo wycofania zgód | brak odpowiednich mechanizmów ochrony prywatności | przechowywanie danych po upływie okresu i celu przechowywania' },
       { category: 'Brak odpowiednich zabezpieczeń',
@@ -101,7 +101,7 @@ module BasicCategories
       { category: 'Brak możliwości dostępu do danych',
         description: 'Przykłady naruszeń: uniemożliwienie wycofania zgody na przetwarzanie danych | brak dostępu użytkowników do danych' }
     ] },
-    { category: 'NARUSZENIA WEWNĘTRZNE', subcategories: [
+    { category: 'NARUSZENIA WEWNĘTRZNE', icon: :home, subcategories: [
       { category: 'Dyskryminacja',
         description: 'Definicja: nierówne traktowanie w zakresie nawiązania i rozwiązania stosunku pracy, warunków zatrudnienia, awansowania oraz dostępu do szkolenia w celu podnoszenia kwalifikacji zawodowych, ze względu na płeć, wiek, niepełnosprawność, rasę, religię, narodowość, przekonania polityczne, przynależność związkową, pochodzenie etniczne, wyznanie, orientację seksualną, zatrudnienie na czas określony lub nieokreślony, zatrudnienie w pełnym lub w niepełnym wymiarze czasu pracy' },
       { category: 'Nękanie i mobbing',
@@ -126,7 +126,8 @@ module BasicCategories
 
   def self.add_basic_categories(organization_id)
     LIST.each do |main_category|
-      super_cat = Category.create!(title: main_category[:category], organization_id: organization_id)
+      super_cat = Category.create!(title: main_category[:category], organization_id: organization_id,
+                                   icon: main_category[:icon])
       main_category[:subcategories].each do |subcategory|
         Category.create!(title: subcategory[:category], description: subcategory[:description],
                          parent_category_id: super_cat.id, organization_id: organization_id)

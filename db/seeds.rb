@@ -8,13 +8,13 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-organization = Organization.create!(name: 'Januszex s.p.o.o', key: 'tem-key', slug: 'Januszex')
+organization = Organization.create!(name: 'Jan Kowalski i spółka', key: 'temp-key-qwe123', slug: 'JanKowalski')
 
 admin = User.create!(email: 'pan.janusz@korpo.com', first_name: 'Janusz', last_name: 'Kowalski',
                      organization: organization, password: 'Password1!', password_confirmation: 'Password1!')
 
 10.times do |i|
-  Employee.create!(email: "prawonik_#{i}@korpo.com", organization: organization)
+  Employee.create!(email: "prawonik_#{i}@kancelaria.pl", organization: organization)
 end
 
 # main_categories = %w[KAT-1 KAT-2 KAT-3]
