@@ -5,7 +5,7 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
     create_table :employees, id: :uuid do |t|
       t.string :email_ciphertext
 
-      t.belongs_to :organization
+      t.belongs_to :organization, type: :uuid
       t.timestamps
     end
   end

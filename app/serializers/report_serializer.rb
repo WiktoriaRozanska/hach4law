@@ -2,8 +2,8 @@
 
 class ReportSerializer < ActiveModel::Serializer
   attributes :id, :slug, :occurrence, :description, :relation_with_the_company, :person_involved, :full_name,
-             :localization, :source_of_truth, :already_reported, :additional_information, :status, :organization_id,
-             :created_at, :files, :category, :subcategory
+             :additional_information, :status, :organization_id, :created_at, :files, :category, :subcategory, :localization,
+             :already_reported, :source_of_truth
 
   def files
     object.files.map do |file|

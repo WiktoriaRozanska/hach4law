@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     resources :reports do
       scope module: 'reports' do
         resources :comments, on: :member
+        resources :files, on: :member, only: :create
       end
     end
     get 'search_report', to: 'reports#search'

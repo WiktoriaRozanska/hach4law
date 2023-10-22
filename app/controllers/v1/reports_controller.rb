@@ -10,9 +10,7 @@ module V1
 
     def create
       report = Report.create!(report_params.merge({ status: :reported, organization_id: current_organization.id }))
-      params[:file]&.each do |file|
-        report.files.attach(file)
-      end
+
       render_json(report)
     end
 
@@ -40,8 +38,7 @@ module V1
 
     def report_params
       params.permit(:occurrence, :description, :relation_with_the_company, :person_involved, :full_name,
-                    :localization, :frequency, :source_of_true, :already_reported, :additional_information,
-                    :person_reported, :category_id)
+                    :localization, :source_of_truth, :already_reported, :additional_information, :category_id)
     end
   end
 end
